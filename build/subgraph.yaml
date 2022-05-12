@@ -1,0 +1,18 @@
+specVersion: 0.0.2
+schema:
+  file: schema.graphql
+dataSources:
+  - kind: near
+    name: contract_v2
+    network: near-testnet
+    source:
+      account: contract_v2.identicon.testnet
+      startBlock: 89740130
+    mapping:
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - VerificationRequest
+      receiptHandlers:
+        - handler: handleReceipt
+      file: contract_v2/contract_v2.wasm
